@@ -1,5 +1,40 @@
 .side {
   &__drawer {
     border-right: 1px solid rgb(233, 233, 233);
+    background: #fff;
+
+    &-menu {
+      width: 0px;
+      transition: 0.4s all ease-in-out;
+      top: 0;
+      left: 80px;
+      height: 100vh;
+      background: #fff;
+      padding: 0;
+
+      &:before {
+        transition: 0.4s all ease-in-out;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.5);
+        width: calc(100vw - 80px);
+        content: "";
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+
+      &.active {
+        width: 32vw;
+        padding: 16px;
+
+        &:before {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
   }
 }

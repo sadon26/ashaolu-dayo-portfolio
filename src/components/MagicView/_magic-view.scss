@@ -1,0 +1,10 @@
+.magic__view {
+  position: relative;
+  left: 0;
+  transition: 0.3s 0.1s all ease-in-out;
+  z-index: -1;
+
+  &.active {
+    left: 32vw;
+  }
+}

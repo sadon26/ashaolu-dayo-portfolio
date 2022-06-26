@@ -1,8 +1,12 @@
 @import "./variables";
 
-@for $i from 1 through 50 {
+@for $i from 1 through 100 {
   .fs-#{$i} {
     font-size: #{$i}px;
+  }
+
+  .lh-#{$i} {
+    line-height: #{$i}px;
   }
 }
 
