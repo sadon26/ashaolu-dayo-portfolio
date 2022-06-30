@@ -1,40 +1,122 @@
+@import '../../styles/base/fonts';
+
 .side {
   &__drawer {
     border-right: 1px solid rgb(233, 233, 233);
     background: #fff;
+    position: relative;
+    width: 75px;
 
     &-menu {
       width: 0px;
       transition: 0.4s all ease-in-out;
       top: 0;
-      left: 80px;
+      left: 75px;
       height: 100vh;
       background: #fff;
-      padding: 0;
-
-      &:before {
-        transition: 0.4s all ease-in-out;
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-        background: rgba(0, 0, 0, 0.5);
-        width: calc(100vw - 80px);
-        content: "";
-        height: 100%;
-        left: 0;
-        top: 0;
-        z-index: -1;
-      }
 
       &.active {
-        width: 32vw;
-        padding: 16px;
+        width: 27vw;
 
-        &:before {
+        & + .side__drawer-overlay {
           opacity: 1;
           pointer-events: auto;
         }
       }
     }
+
+    &-overlay {
+      transition: 0.4s all ease-in-out;
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      background: rgba(0, 0, 0, 0.5);
+      width: 100vw;
+      content: '';
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    &-tab {
+      position: relative;
+      transition: 0.3s all ease-out;
+
+      &:before {
+        position: absolute;
+        width: 0%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        content: '';
+        @extend .background-yellow;
+        transition: 0.3s all ease-out;
+      }
+
+      &:hover {
+        border-radius: 8px 8px 0 0;
+
+        &:before {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        border-radius: 8px 8px 0 0;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          bottom: 0;
+          left: 0;
+          content: '';
+          @extend .background-yellow;
+          transition: 0.5s all ease-out;
+        }
+      }
+    }
+
+    &-content {
+      transition: all 1s ease-out;
+      opacity: 0;
+      position: relative;
+      left: -600px;
+
+      &.active {
+        opacity: 1;
+        left: 0px;
+      }
+    }
   }
+}
+
+// Transition class
+.fade-enter {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  top: 35px;
+}
+.fade-exit {
+  opacity: 1;
+  position: relative;
+  top: 0;
+}
+.fade-enter-active {
+  max-height: 700px;
+  overflow: auto;
+  top: 0px;
+}
+.fade-exit-active {
+  top: 35px;
+  opacity: 0;
+}
+.fade-exit-active {
+  transition: all 500ms ease-out;
+}
+.fade-enter-active {
+  transition: all 1000ms ease-out;
 }
