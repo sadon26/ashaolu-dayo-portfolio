@@ -1,0 +1,57 @@
+@import 'styles/base/variables';
+
+.animate-in-out {
+  animation: scale-in-out 2s ease-out infinite;
+}
+
+@keyframes scale-in-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-loader {
+  &__dot {
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: $gray;
+    opacity: 0;
+    animation: slideUp 0.8s infinite ease-in-out;
+
+    $delay: 0s;
+
+    @for $i from 2 through 4 {
+      $delay: $delay + 0.2s;
+
+      &:nth-of-type(#{$i}) {
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  .shape {
+    fill: $gray;
+  }
+
+  &__text {
+    display: flex;
+    align-items: baseline;
+    color: $gray;
+  }
+}

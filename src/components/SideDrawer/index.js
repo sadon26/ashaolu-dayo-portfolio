@@ -18,35 +18,38 @@ const SideDrawer = ({ showMenu, setshowMenu }) => {
         </div>
       </nav>
 
-      <div className={`absolute side__drawer-menu overflow-hidden pl-12 pt-40${showMenu ? ' pr-12 active ' : ''}`}>
-        <div className={`side__drawer-content${showMenu ? ' active' : ''}`}>
-          <div className="flex gap-x-8 mb-8">
-            {tabs.map((tab, index) => (
-              <span
-                className={`fs-13 fw-600 p-2 side__drawer-tab cursor-pointer color-yellow ${
-                  activeTab === tab ? 'active' : ''
-                }`}
-                key={index}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </span>
-            ))}
-          </div>
+      <div className={`absolute side__drawer-menu overflow-hidden${showMenu ? ' active ' : ''}`}>
+        <div className="flex flex-col justify-between h-full">
+          <div className={`side__drawer-content pl-12 pt-40${showMenu ? ' pr-12 active' : ''}`}>
+            <div className="flex gap-x-8 mb-8">
+              {tabs.map((tab, index) => (
+                <span
+                  className={`fs-13 fw-600 p-2 side__drawer-tab cursor-pointer color-yellow ${
+                    activeTab === tab ? 'active' : ''
+                  }`}
+                  key={index}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </span>
+              ))}
+            </div>
 
-          <div>
-            <SwitchTransition mode="out-in">
-              <CSSTransition
-                key={activeTab}
-                addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
-                classNames="fade"
-                mountOnEnter
-                unmountOnExit
-              >
-                {activeTab === 'ABOUT' ? <About /> : activeTab === 'CONTACT' ? <Contact /> : <Services />}
-              </CSSTransition>
-            </SwitchTransition>
+            <div>
+              <SwitchTransition mode="out-in">
+                <CSSTransition
+                  key={activeTab}
+                  addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
+                  classNames="fade"
+                  mountOnEnter
+                  unmountOnExit
+                >
+                  {activeTab === 'ABOUT' ? <About /> : activeTab === 'CONTACT' ? <Contact /> : <Services />}
+                </CSSTransition>
+              </SwitchTransition>
+            </div>
           </div>
+          <div>2</div>
         </div>
       </div>
       <div className="side__drawer-overlay"></div>
