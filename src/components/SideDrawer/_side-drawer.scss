@@ -97,31 +97,3 @@
     }
   }
 }
-
-// Transition class
-.fade-enter {
-  max-height: 0;
-  overflow: hidden;
-  position: relative;
-  top: 35px;
-}
-.fade-exit {
-  opacity: 1;
-  position: relative;
-  top: 0;
-}
-.fade-enter-active {
-  max-height: 700px;
-  overflow: auto;
-  top: 0px;
-}
-.fade-exit-active {
-  top: 35px;
-  opacity: 0;
-}
-.fade-exit-active {
-  transition: all 500ms ease-out;
-}
-.fade-enter-active {
-  transition: all 1000ms ease-out;
-}

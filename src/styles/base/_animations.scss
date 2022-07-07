@@ -4,6 +4,53 @@
   animation: scale-in-out 2s ease-out infinite;
 }
 
+// Transition class
+.fade-enter {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  top: 35px;
+}
+.fade-exit {
+  opacity: 1;
+  position: relative;
+  top: 0;
+}
+.fade-enter-active {
+  max-height: 700px;
+  overflow: auto;
+  top: 0px;
+}
+.fade-exit-active {
+  top: 35px;
+  opacity: 0;
+  transition: all 500ms ease-out;
+}
+.fade-enter-active {
+  transition: all 1000ms ease-out;
+}
+
+.slide-enter {
+  position: relative;
+  transform: translateY(100%);
+}
+.slide-exit {
+  transform: translateY(0);
+  position: relative;
+}
+.slide-enter-active {
+  transform: translateY(0%);
+}
+.slide-exit-active {
+  transform: translateY(-100%);
+}
+.slide-enter-active,
+.slide-exit-active {
+  opacity: 1;
+  position: relative;
+  transition: all 500ms ease-out;
+}
+
 @keyframes scale-in-out {
   0% {
     transform: scale(1);

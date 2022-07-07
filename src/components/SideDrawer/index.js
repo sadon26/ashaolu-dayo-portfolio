@@ -3,12 +3,12 @@ import './_side-drawer.scss';
 import { ReactComponent as DayoLogo } from 'assets/icons/dayo-logo.svg';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { About, Services, Contact } from 'components';
+import { About, Resume, Contact } from 'components';
 
 const SideDrawer = ({ showMenu, setshowMenu }) => {
   const [activeTab, setActiveTab] = useState('ABOUT');
 
-  const tabs = ['ABOUT', 'SERVICES', 'CONTACT'];
+  const tabs = ['ABOUT', 'RESUME', 'CONTACT'];
 
   return (
     <div className="relative w-20 z-10">
@@ -44,7 +44,7 @@ const SideDrawer = ({ showMenu, setshowMenu }) => {
                   mountOnEnter
                   unmountOnExit
                 >
-                  {activeTab === 'ABOUT' ? <About /> : activeTab === 'CONTACT' ? <Contact /> : <Services />}
+                  {activeTab === 'ABOUT' ? <About /> : activeTab === 'CONTACT' ? <Contact /> : <Resume />}
                 </CSSTransition>
               </SwitchTransition>
             </div>
