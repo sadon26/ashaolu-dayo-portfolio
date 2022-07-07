@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0bb89d44.css",
+    "main.js": "/static/js/main.d7ff461a.js",
+    "static/js/787.14b1af16.chunk.js": "/static/js/787.14b1af16.chunk.js",
+    "static/media/computer-on-table.png": "/static/media/computer-on-table.88b68f2acc234118c03f.png",
+    "index.html": "/index.html",
+    "static/media/dayo-logo.svg": "/static/media/dayo-logo.833155649dba6c7a05a9ddb9559ae4db.svg",
+    "main.0bb89d44.css.map": "/static/css/main.0bb89d44.css.map",
+    "main.d7ff461a.js.map": "/static/js/main.d7ff461a.js.map",
+    "787.14b1af16.chunk.js.map": "/static/js/787.14b1af16.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0bb89d44.css",
+    "static/js/main.d7ff461a.js"
+  ]
+}
