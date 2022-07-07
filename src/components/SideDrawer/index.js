@@ -8,7 +8,7 @@ import { About, Resume, Contact } from 'components';
 const SideDrawer = ({ showMenu, setshowMenu }) => {
   const [activeTab, setActiveTab] = useState('ABOUT');
 
-  const tabs = ['ABOUT', 'RESUME', 'CONTACT'];
+  const tabs = ['ABOUT', 'CONTACT'];
 
   return (
     <div className="relative w-20 z-10">

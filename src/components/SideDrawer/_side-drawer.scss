@@ -6,17 +6,21 @@
     background: #fff;
     position: relative;
     width: 75px;
+    z-index: 2;
 
     &-menu {
-      width: 0px;
       transition: 0.4s all ease-in-out;
       top: 0;
       left: 75px;
+      transform: translateX(-100%);
+      z-index: 1;
+      position: absolute;
+      width: 27vw;
       height: 100vh;
       background: #fff;
 
       &.active {
-        width: 27vw;
+        transform: translateX(0%);
 
         & + .side__drawer-overlay {
           opacity: 1;

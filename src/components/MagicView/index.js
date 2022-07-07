@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './_magic-view.scss';
 import ComputerOnTable from 'assets/images/computer-on-table.png';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
+import { Projects } from 'components';
 
 const MagicView = ({ showMenu }) => {
   const [showProjects] = useState(false);
@@ -32,7 +33,9 @@ const MagicView = ({ showMenu }) => {
               </div>
             </div>
           ) : (
-            <div className={`flex-grow shrink-0 magic__view ${showMenu ? 'active' : ''}`}>Yippee</div>
+            <div className={`flex-grow shrink-0 magic__view ${showMenu ? 'active' : ''}`}>
+              <Projects />
+            </div>
           )}
         </CSSTransition>
       </SwitchTransition>
