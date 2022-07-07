@@ -20,7 +20,7 @@ const SideDrawer = ({ showMenu, setshowMenu }) => {
 
       <div className={`absolute side__drawer-menu overflow-hidden${showMenu ? ' active ' : ''}`}>
         <div className="flex flex-col justify-between h-full">
-          <div className={`side__drawer-content pl-12 pt-40${showMenu ? ' pr-12 active' : ''}`}>
+          <div className={`side__drawer-content pl-12 pr-12 pt-40${showMenu ? ' active' : ''}`}>
             <div className="flex gap-x-8 mb-8">
               {tabs.map((tab, index) => (
                 <span
