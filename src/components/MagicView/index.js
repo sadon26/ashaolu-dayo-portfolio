@@ -14,7 +14,7 @@ const MagicView = ({ showMenu }) => {
         <CSSTransition
           key={showProjects}
           addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
-          classNames="slide"
+          classNames="fade-two"
           mountOnEnter
           unmountOnExit
         >
