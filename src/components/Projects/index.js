@@ -4,7 +4,7 @@ import KafeneLanding from 'assets/images/kafene-landing.jpg';
 import InventoryLanding from 'assets/images/inventory-landing.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, EffectCoverflow } from 'swiper';
-import gsap from 'gsap';
+import gsap, { Back } from 'gsap';
 import './_project.scss';
 
 const Projects = () => {
@@ -58,14 +58,13 @@ const Projects = () => {
           gsap.fromTo(
             `.swiper-${slide.realIndex + 1} .project__description`,
             {
-              y: 50,
-              autoAlpha: 0,
+              y: 200,
             },
             {
               y: 0,
-              autoAlpha: 1,
               duration: 1,
               delay: 1,
+              ease: Back,
             },
           );
         }}
