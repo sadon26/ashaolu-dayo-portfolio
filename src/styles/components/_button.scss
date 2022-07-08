@@ -1,0 +1,46 @@
+@import '../base/fonts';
+
+.btn {
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  width: 150px;
+  padding: 10px 5px;
+  position: relative;
+
+  &--primary {
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s all ease-out;
+
+    &:before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      @extend .background-yellow;
+      top: 0;
+      left: 0;
+      transition: 0.3s all ease-out;
+      transform: translateX(-100%);
+    }
+
+    &:after {
+      position: absolute;
+      color: #fff;
+      content: 'View Projects';
+      top: 50%;
+      left: 50%;
+      white-space: nowrap;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      &:before {
+        transform: translateX(0%);
+      }
+    }
+  }
+}

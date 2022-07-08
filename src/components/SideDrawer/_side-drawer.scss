@@ -18,9 +18,11 @@
       width: 27vw;
       height: 100vh;
       background: #fff;
+      pointer-events: none;
 
       &.active {
         transform: translateX(0%);
+        pointer-events: auto;
 
         & + .side__drawer-overlay {
           opacity: 1;
