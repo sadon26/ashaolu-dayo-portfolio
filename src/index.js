@@ -5,6 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import 'index.scss';
 import 'styles/_index.scss';
+import 'swiper/css';
+import 'swiper/css/mousewheel';
+import 'swiper/css/effect-coverflow';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

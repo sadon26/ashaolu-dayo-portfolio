@@ -1,3 +1,9 @@
 @import './fonts';
 @import './variables';
 @import './animations';
+
+.fit-image {
+  background-size: cover;
+  object-fit: cover;
+  width: calc(100vw - 75px);
+}

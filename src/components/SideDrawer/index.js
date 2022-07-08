@@ -49,7 +49,6 @@ const SideDrawer = ({ showMenu, setshowMenu }) => {
               </SwitchTransition>
             </div>
           </div>
-          <div>2</div>
         </div>
       </div>
       <div className="side__drawer-overlay"></div>
