@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Project } from 'components';
 import InfohobLanding from 'assets/images/infohob-landing.jpg';
 import KafeneLanding from 'assets/images/kafene-landing.jpg';
@@ -6,10 +6,12 @@ import InventoryLanding from 'assets/images/inventory-landing.jpg';
 import IndigoLanding from 'assets/images/indigo-landing.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, EffectCoverflow } from 'swiper';
-import gsap, { Back, Elastic } from 'gsap';
+import { animateProjectContents } from 'utils/gsapAnimations';
 import './_project.scss';
 
 const Projects = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const slides = [
     {
       logo: InfohobLanding,
@@ -48,62 +50,13 @@ const Projects = () => {
     },
   ];
 
-  const animateElements = (slide) => {
-    gsap.fromTo(
-      `.swiper-${slide.realIndex + 1} img`,
-      {
-        scale: 1,
-      },
-      {
-        scale: 1.2,
-        duration: 1,
-        delay: 1,
-      },
-    );
-    gsap.fromTo(
-      `.swiper-${slide.realIndex + 1} .project__heading-title`,
-      {
-        autoAlpha: 0,
-        y: 20,
-      },
-      {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1,
-        delay: 1,
-        ease: Back,
-      },
-    );
-    gsap.fromTo(
-      `.swiper-${slide.realIndex + 1} .project__heading-separator`,
-      {
-        width: 0,
-      },
-      {
-        delay: 1,
-        duration: 2,
-        width: '100%',
-        ease: Elastic,
-      },
-    );
-    gsap.fromTo(
-      `.swiper-${slide.realIndex + 1} .project__description`,
-      {
-        y: 200,
-        autoAlpha: 0,
-      },
-      {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1,
-        delay: 1,
-        ease: Back,
-      },
-    );
-  };
-
   return (
-    <div className="h-screen">
+    <div className="h-screen relative">
+      <div className="flex flex-col gap-y-4 project__paginator absolute">
+        {slides.map((_, index) => (
+          <div className={index === currentSlide ? 'active' : ''}></div>
+        ))}
+      </div>
       <Swiper
         modules={[Mousewheel, EffectCoverflow]}
         effect="coverflow"
@@ -116,8 +69,11 @@ const Projects = () => {
           thresholdDelta: 50,
         }}
         direction="vertical"
-        onSlideChange={(slide) => animateElements(slide)}
-        onSwiper={() => animateElements({ realIndex: 0 })}
+        onSlideChange={(slide) => {
+          animateProjectContents(slide);
+          setCurrentSlide(slide.realIndex);
+        }}
+        onSwiper={() => animateProjectContents({ realIndex: 0 })}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
