@@ -27,7 +27,7 @@ const Projects = () => {
       alt: 'kafene-landing',
       title: 'Kafene',
       description: `Customized lease application which add flexibility and affordability
-         to your life and helps you get the products you want without having to pay for it all upfront.`,
+         to your life by helping you get the products you want without having to pay for it all upfront.`,
       nextPage: 'https://kafene.com',
     },
     {
