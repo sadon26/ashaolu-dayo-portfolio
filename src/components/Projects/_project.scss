@@ -1,7 +1,38 @@
+@import 'styles/base/animations';
+
 .project {
   &__description {
     bottom: 70px;
     left: 70px;
     color: #fff;
+  }
+
+  &__heading {
+    color: #fff;
+    top: 70px;
+    left: 70px;
+
+    &-separator {
+      height: 1px;
+      background: #fff;
+      position: relative;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #fff;
+      }
+
+      &:after {
+        animation: slide-to-right 2s ease-out both;
+      }
+    }
   }
 }
