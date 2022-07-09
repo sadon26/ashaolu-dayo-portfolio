@@ -21,8 +21,8 @@ const MagicView = ({ showMenu }) => {
           {!showProjects ? (
             <div className={`flex justify-between flex-grow shrink-0 magic__view ${showMenu ? 'active' : ''}`}>
               <div className="flex flex-col justify-center pl-32 basis-4/6">
-                <h1 className="fs-18 mb-12">Hi, I'm Ashaolu Dayo</h1>
-                <p className="fw-600 fs-70 lh-85 mb-4">
+                <h1 className="fs-18 mb-12">Hi, I'm Dayo Ashaolu</h1>
+                <p className="fw-600 fs-70 lh-85 mb-4" style={{ color: '#10111F' }}>
                   Graphics Designer & <br /> Front End Developer
                 </p>
                 <button onClick={() => setShowProjects(!showProjects)} className="btn btn--primary">

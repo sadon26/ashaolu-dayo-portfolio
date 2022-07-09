@@ -3,7 +3,7 @@ import './_side-drawer.scss';
 import { ReactComponent as DayoLogo } from 'assets/icons/dayo-logo.svg';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { About, Resume, Contact } from 'components';
+import { About, Resume, Contact, Hamburger } from 'components';
 
 const SideDrawer = ({ showMenu, setshowMenu }) => {
   const [activeTab, setActiveTab] = useState('ABOUT');
@@ -13,14 +13,17 @@ const SideDrawer = ({ showMenu, setshowMenu }) => {
   return (
     <div className="relative w-20 z-10">
       <nav className="h-screen flex justify-center items-center side__drawer relative">
-        <div onClick={() => setshowMenu(!showMenu)} className="w-12 h-12 cursor-pointer">
-          <DayoLogo />
+        <div onClick={() => setshowMenu(!showMenu)}>
+          <Hamburger active={showMenu} />
         </div>
       </nav>
 
       <div className={`absolute side__drawer-menu overflow-hidden${showMenu ? ' active ' : ''}`}>
         <div className="flex flex-col justify-between h-full">
-          <div className={`side__drawer-content pl-12 pr-12 pt-40${showMenu ? ' active' : ''}`}>
+          <div className={`side__drawer-content px-12 pt-20${showMenu ? ' active' : ''}`}>
+            <div className="w-10 h-10 mb-20">
+              <DayoLogo />
+            </div>
             <div className="flex gap-x-8 mb-8">
               {tabs.map((tab, index) => (
                 <span
