@@ -16,10 +16,10 @@ export const animateProjectContents = (slide) => {
     `.swiper-${slide.realIndex + 1} .project__heading-title`,
     {
       autoAlpha: 0,
-      y: 20,
+      x: 40,
     },
     {
-      y: 0,
+      x: 0,
       autoAlpha: 1,
       duration: 1,
       delay: 1,
@@ -41,7 +41,7 @@ export const animateProjectContents = (slide) => {
   gsap.fromTo(
     `.swiper-${slide.realIndex + 1} .project__description`,
     {
-      y: 200,
+      y: 100,
       autoAlpha: 0,
     },
     {
