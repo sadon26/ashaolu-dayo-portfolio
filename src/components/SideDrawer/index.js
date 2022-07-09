@@ -3,7 +3,7 @@ import './_side-drawer.scss';
 import { ReactComponent as DayoLogo } from 'assets/icons/dayo-logo.svg';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { About, Resume, Contact, Hamburger } from 'components';
+import { About, Resume, Contact, Hamburger, SocialIcons } from 'components';
 
 const SideDrawer = ({ showMenu, setshowMenu }) => {
   const [activeTab, setActiveTab] = useState('ABOUT');
@@ -52,6 +52,7 @@ const SideDrawer = ({ showMenu, setshowMenu }) => {
               </SwitchTransition>
             </div>
           </div>
+          <SocialIcons />
         </div>
       </div>
       <div className="side__drawer-overlay"></div>
